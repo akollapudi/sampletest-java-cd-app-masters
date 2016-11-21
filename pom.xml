@@ -172,6 +172,62 @@
                         
                                  
                         
+               
+                        <plugin>
+    <groupId>ch.fortysix</groupId>
+    <artifactId>maven-postman-plugin</artifactId>
+    <version>0.1.6</version>
+    <executions>
+        <execution>
+            <id>send_an_email</id>
+            <phase>test</phase>
+            <goals>
+                <goal>send-mail</goal>
+            </goals>
+            <inherited>true</inherited>
+            <configuration>
+                <mailhost>smtp.gmail.com</mailhost>
+                <mailport>465</mailport>
+                <mailssl>true</mailssl>
+                <mailAltConfig>true</mailAltConfig> 
+                <mailuser>chandra.yarramreddy@gmail.com</mailuser>
+                <mailpassword>chandra1</mailpassword>
+ 
+                <from>chandra.yarramreddy@gmail.com</from>
+                <receivers>
+                    <receiver>chandra.yarramreddy@gmail.com</receiver>
+                  
+                </receivers>
+ 
+                <subject>Test Automation Report</subject>
+                <failonerror>false</failonerror>
+                <htmlMessage>
+                    <![CDATA[
+                    <p>Partner, we have a new deployment!</p>
+                    <br>
+                    <p>Have a nice day.</p>
+                    ]]> 
+                </htmlMessage>
+                
+                <fileSets>
+                  <fileSet>
+                  <directory>${basedir}/target/surefire-reports</directory>
+                  <includes>
+                  <include>**/**.xml</include>
+                  </includes>
+                  </fileSet>
+                </fileSets>
+                
+                
+                
+            </configuration>
+        </execution>
+    </executions>
+</plugin>
+                        
+                        
+                        
+                        
                         
                         
                 </plugins>
@@ -190,9 +246,5 @@
                 </repository>
             </repositories>
             <!--  -->
-                
-                
-              
-                
            
         </project>
