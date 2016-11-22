@@ -191,11 +191,11 @@
             <inherited>true</inherited>
             <configuration>
                 <mailhost>smtp.gmail.com</mailhost>
-                <mailport>587</mailport>
+                <mailport>465</mailport>
                 <mailssl>true</mailssl>
                 <mailAltConfig>true</mailAltConfig> 
                 <mailuser>chandra.yarramreddy@gmail.com</mailuser>
-                <mailpassword>chandra1</mailpassword>
+                <mailpassword>chandra2</mailpassword>
  
                 <from>chandra.yarramreddy@gmail.com</from>
                 <receivers>
